@@ -12,9 +12,8 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(appModule)
+            modules(appModule, analyticsModule)
         }
-        //initialize Analytics
         val analyticsTracker : AnalyticsTracker = getKoin().get()
         Analytics.init(analyticsTracker)
     }

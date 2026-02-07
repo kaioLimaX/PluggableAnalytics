@@ -1,19 +1,13 @@
 package com.example.interfaceexemple.di
 
-import com.example.interfaceexemple.analytics.data.CompositeAnalyticsTracker
-import com.example.interfaceexemple.analytics.domain.AnalyticsTracker
-import com.example.interfaceexemple.analytics.data.providers.AdjustAnalyticsTracker
-import com.example.interfaceexemple.analytics.data.providers.FirebaseAnalyticsTracker
+import com.example.interfaceexemple.presentation.main.MainViewModel
+import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single<AnalyticsTracker> {
-        CompositeAnalyticsTracker(
-            listOf(
-                FirebaseAnalyticsTracker(),
-                AdjustAnalyticsTracker()
-            )
-        )
+
+    viewModel{
+        MainViewModel()
     }
 
 }

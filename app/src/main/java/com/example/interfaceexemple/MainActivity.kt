@@ -22,11 +22,10 @@ import com.example.interfaceexemple.presentation.main.MainUIAction
 import com.example.interfaceexemple.presentation.main.MainUIState
 import com.example.interfaceexemple.presentation.main.MainViewModel
 import com.example.interfaceexemple.ui.theme.InterfaceExempleTheme
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
-
-    val viewModel : MainViewModel by viewModels()
-
+    val viewModel : MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
